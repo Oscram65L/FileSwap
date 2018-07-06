@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="TheGame.Deletion.GameUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheGame.Deletion"
+             mc:Ignorable="d" 
+             Height="200" Width="1500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="10, 10, 0, 0"
+                    Grid.Row="0" Grid.Column="0">
+            <Label Content="Total Score:"/>
+            <Label x:Name="lbltotalScore" Content="{Binding Path= _currentPlayer.Points}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10, 10, 0, 0"
+                    Grid.Row="1" Grid.Column="0">
+            <Label Content="Score you will gain from this file:"/>
+            <Label x:Name="lblScoreToGain"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10, 10, 0, 0"
+                    Grid.Row="2" Grid.Column="0">
+            <Label Content="Current file to delete:" HorizontalAlignment="Left"/>
+            <Label x:Name="lblFileName" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <Grid Grid.Row="3" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonDelete" Content="Delete File" Margin="0,0,20,0"
+                    Grid.Row="0" Grid.Column="0"
+                    Click="buttonDelete_Click"/>
+            <Button x:Name="buttonSkip" Content="Skip"
+                    Grid.Row="0" Grid.Column="1"
+                    Click="buttonSkip_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
